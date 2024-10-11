@@ -1,6 +1,10 @@
-import os
-import math
 import sys
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, current_dir)
+
+import math
 from collections import Counter
 from random import shuffle
 from system_files.convert_results_dump_to_species import convert_dump_to_species
@@ -24,10 +28,12 @@ simulation_time = parameters["simulation_time"]
 number_of_test_suites = parameters["number_of_test_suites"]
 input_species_file = parameters["input_species_file"]
 save_results_directory = parameters["save_results_directory"]
-perl_interpreter = parameters["perl_interpreter"]
-nfsim_perl_interface = parameters["nfsim_perl_interface"]
-nfsim_simulator = parameters["nfsim_simulator"]
 delete_temporary_files = parameters["delete_temporary_files"]
+
+# embedded software tools' path
+perl_interpreter = os.path.join(current_dir, 'tools/strawberry-perl-5.30.0.1-64bit-portable/perl/bin/perl.exe')
+nfsim_perl_interface = os.path.join(current_dir, 'tools/NFsim_v1.11/bng2.pl')
+nfsim_simulator = os.path.join(current_dir, 'tools/NFsim_v1.11/bin/NFsim_MSWin32.exe')
 
 # number of splits to be performed during the simulations
 number_of_splits = math.ceil(simulation_time / 0.1)

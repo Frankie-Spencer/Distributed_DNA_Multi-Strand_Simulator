@@ -1,7 +1,7 @@
 {
  "number_of_parallel_threads": 8,
  "simulation_time": 10,
- "number_of_test_suites": 10,
+ "number_of_test_suites": 1,
  "input_species_file": "C:/my_species_file_directory/dx_tile_small-scale_example.species",
  "save_results_directory": "C:/my_save_results_directory/my_test_simulation",
  "delete_temporary_files": true
